@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-obsidian-gradient {
+    background: linear-gradient(180deg, #1A1A1A 0%, #120F0C 100%);
+  }
+  .bg-card-gradient {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.95) 0%, rgba(18, 15, 12, 0.98) 100%);
+  }
+  .bg-ambient-glow {
+    background: radial-gradient(circle at 60% 40%, rgba(245, 245, 247, 0.05) 0%, rgba(16, 12, 8, 0) 70%);
+  }
+  .shadow-luxury {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7);
+  }
+  .shadow-luxury-sm {
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.5);
+  }
+  .modal-backdrop-blur {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* Accordion chevron transitions */
+.accordion-chevron {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accordion-open .accordion-chevron {
+  transform: rotate(180deg);
+}
+.accordion-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+}
+.accordion-open .accordion-content {
+  max-height: 5000px;
+  opacity: 1;
+}
